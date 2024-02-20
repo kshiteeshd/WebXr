@@ -1,7 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
 *{
     margin: 0px;
     color: aliceblue;
     overflow: hidden;
+    font-family: 'Nanum Gothic';
     
 }
 
@@ -22,6 +27,7 @@ body{
     height: 100vh;
     width: 100%; 
     background: rgb(71, 64, 49);
+    background-image: url(/Background.png);
     
 }
 
@@ -43,12 +49,8 @@ ul {
 }
 
 h4{
-    font-size: x-large;
+    font-size: 100%;
 }
-
-
-
-
 
 
 li{
@@ -56,7 +58,6 @@ li{
     display: inline;
     text-transform: capitalize;
 }
-
 
 
 a{
@@ -73,20 +74,13 @@ a:hover{
 
 .gS{
     padding: 2%;
-    width: 80%;
+    width: 100%;  
     
-    
-    
-    
-    
-    
-    
-
-
+          
 }
 
 p{
-    font-size: 130%;
+    font-size: 100%;
 }
 
 button{
@@ -121,4 +115,6 @@ button:hover{
     background-color: black;
     width: 100%;
     display: flex;
-justify-content: center;}
+    justify-content: center;
+    font-size: 80%;
+}
