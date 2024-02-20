@@ -27,7 +27,7 @@ body{
     height: 100vh;
     width: 100%; 
     background: rgb(71, 64, 49);
-    background-image: url(Background.png);
+    background-image: url(./Background.png);
     
 }
 
@@ -125,4 +125,5 @@ button:hover{
     justify-content: center;
     font-size: 80%;
     padding: .5%;
+}
 }
