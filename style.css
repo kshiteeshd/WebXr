@@ -1,6 +1,82 @@
-body{
-    background-color: aqua;
+*{
+    margin: 0px;
+    color: aliceblue;
+    
 }
-nav{
-    background-color: antiquewhite;
+
+body{
+    height: 100vh;
+    width: 100%;
+    
+    
+    background: linear-gradient(rgb(70, 70, 70),rgb(82, 82, 137));
+}
+
+/* ------------------- */
+nav {
+    background-color: transparent;
+    margin: 0px;
+    display: flex;
+    justify-content: center;  
+}
+
+
+.nav{
+    display: flex;
+    flex-direction: row;
+}
+
+
+li{
+    list-style-type: none;
+}
+
+
+
+a{
+    padding-right: 10px;
+    text-decoration: none;
+}
+a:hover{
+    padding-right: 10px;
+    text-decoration: none;
+    color: orange;
+}
+
+/* ---------------------------- */
+
+.gS{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+button{
+    width: 140px;
+    height: 50px;
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+    background-color: rgba(166, 166, 166, 0.252);
+    border: solid 3px rgb(217, 217, 217);
+
+}
+
+button:hover{
+    width: 140px;
+    height: 50px;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.423);
+    border: solid 3px rgba(79, 34, 34, 0.729);
+}
+
+.topBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
