@@ -18,7 +18,7 @@
 
 
 h1{
-    font-size: 120%;
+    font-size: 160%;
 
 }
 
@@ -37,7 +37,7 @@ nav {
     margin: 0px;
     display: flex;
     justify-content: center; 
-    font-size: 80%; 
+    font-size: 100%; 
     padding-top: 2%;
     padding-bottom: 2%
 }
@@ -49,7 +49,7 @@ ul {
 }
 
 h4{
-    font-size: 100%;
+    font-size: 120%;
 }
 
 
@@ -86,7 +86,7 @@ a:hover{
 }
 
 p{
-    font-size: 100%;
+    font-size: 120%;
 }
 
 button{
@@ -103,10 +103,10 @@ button{
 button:hover{
     width: 120px;
     height: 40px;
-    color: rgb(46, 19, 4);
+    color: rgb(255, 255, 255);
     border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    border: solid 3px rgba(159, 42, 0, 0.362);
+    background-color: rgba(255, 255, 255, 0.404);
+    border: solid 3px rgb(224, 168, 26);
 }
 
 .topBar{
