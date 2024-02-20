@@ -65,16 +65,13 @@ a:hover{
 /* ---------------------------- */
 
 .gS{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%);
+    padding: 2%;
+    width: 80%;
     
-    padding: 5%;
-    margin: 2%;
+    
+    
+    
+    
     
     
 
