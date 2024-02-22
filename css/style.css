@@ -92,12 +92,15 @@ a:hover{
     
     align-items: center;
     flex-direction: column;
+    
 
           
 }
 
 p{
     font-size: 120%;
+    text-align: justify;
+    
 }
 
 button{
