@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+
+*{
+    margin: 0px;
+    color: rgb(255, 255, 255);
+    font-family: 'Nanum Gothic';
+    overflow-x: hidden;
+}
+
+
+
+body {
+    
+    height: 100vh;
+    width: 100%; 
+    background: rgb(71, 64, 49);
+    background-image: url(/webxr.github.io/Images/bg2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-blend-mode: color-burn;
+}
+
+span
+{
+    padding:10px 40px 10px 10px;
+}
+
+
+
+.organ-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #d4b6f9;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease; /* Add smooth transition effect */
+}
+
+
+
+.button:hover {
+    transform: translateY(-5px); /* Move the button up slightly */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Add a shadow effect */
+}
+
+.button img {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+
+.inner-button {
+    position: absolute;
+    bottom: 10%;
+    left: 80%;
+    transform: translateX(-50%); /* Center the inner button horizontally */
+    background-color: darkmagenta;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow effect */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease; /* Add smooth transition effect */
+}
+
+.button:hover .inner-button {
+    opacity: 1; /* Show the inner button on hover */
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.button:hover .dropdown {
+    display: block;
+}
+
+/* ----------------------------------------------------- */
+
+    
+    
+    
+
+::-webkit-scrollbar{
+    width: 5px;
+}
+
+.topBar{
+    padding-top: 3%;
+    padding-bottom: 2%;
+    background: black;
+}
+
+
+h1{
+    font-size: 160%;
+
+}
+
+
+body{
+    height: 100vh;
+    width: 100%; 
+    background: rgb(71, 64, 49);
+    background-image: url(/webxr.github.io/Images/bg2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-blend-mode: color-burn;
+    
+    
+    
+    
+}
+
+
+
+/* ------------------- */
+nav {
+    background-color: rgba(0, 0, 0, 0.411);
+    margin: 0px;
+    display: flex;
+    justify-content: center; 
+    font-size: 100%; 
+    padding-top: 2%;
+    padding-bottom: 2%
+}
+
+ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+}
+
+
+
+
+li{
+    list-style-type: none;    
+    display: inline;
+    text-transform: capitalize;
+}
+
+
+a{
+    padding-right: 10px;
+    text-decoration: none;
+}
+a:hover{
+    padding-right: 10px;
+    text-decoration: none;
+    color: orange;
+}
+
+/* ---------------------------- */
+
+
+
+
+p{
+    font-size: 100%;
+    text-align: justify;
+    
+}
+
+
+
+.topBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    
+    background-color: black;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 80%;
+    padding: .5%;
+}
+
+

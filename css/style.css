@@ -63,6 +63,7 @@ ul {
 
 h4{
     font-size: 120%;
+    color: rgb(255, 154, 99);
 }
 
 
@@ -103,7 +104,7 @@ a:hover{
 }
 
 p{
-    font-size: 120%;
+    font-size: 100%;
     text-align: justify;
     
 }
@@ -123,7 +124,7 @@ button{
 button:hover{
     width: 120px;
     height: 40px;
-    color: rgb(112, 47, 47);
+    color: rgb(255, 207, 181);
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.404);
     border: solid 3px rgb(224, 168, 26);
