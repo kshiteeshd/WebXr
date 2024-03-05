@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Human Anatomy</title>
+</head>
+
+<body>
+  <div class="mainContainer">
+    <!-- Top Container -->
+    <div class="topBar">
+      <h1>AR ANATOMY</h1>
+    </div>
+    <!-- NAV BAR Container -->
+    <div class="navbar">
+      <nav>
+        <ul class="nav">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#scan">Scan</a></li>
+          <li><a href="/webxr.github.io/ARtest/artest.html">AR_TEST</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Getting Started -->
+    <div class="gS">
+      <h4>AR: Anatomy Reimagined</h4>
+      <br>
+      <p>
+        Unlock the door to a whole new dimension of human anatomy education with our cutting-edge Augmented Reality (AR)
+        web application. 
+        <br>
+        <br>
+        Immerse yourself in the intricate world of the human body like never before, as we
+        revolutionize the way you learn and understand anatomy.
+        <br><br>
+        AR technology brings textbooks to life and bridges the gap between traditional learning methods and modern
+        innovation. By overlaying digital information onto the real world, AR enables an interactive and immersive
+        learning experience, making complex concepts tangible and easily comprehensible.
+        <br><br>
+      </p>
+      <h4>Explore Anatomy in 3D</h4>
+      <br>
+      <p>
+        Say goodbye to static images and hello to dynamic 3D models! With our AR app, you can explore every system,
+        organ, and structure of the human body in stunning detail. Rotate, zoom and gaining a
+        deeper understanding of anatomy from different angle.
+      </p>
+      <br>
+      <h4>Get Started </h4>
+      <br>
+      <p>
+        Ready to embark on your augmented reality anatomy adventure? Click the button below to move to explore the anatomy library.
+      </p>
+      <br>
+      <br>
+      <a href="/webxr.github.io/pages/home.html"><button class="start">GET STARTED</button></a>
+    </div>
+  </div>
+  <!-- Footer -->
+  <div class="footer">
+    <footer>
+      <p>AR Human Anatomy &copy; 2024</p>
+    </footer>
+  </div>
+
+  <script src="./js/type.js"></script>
+</body>
+
+</html>

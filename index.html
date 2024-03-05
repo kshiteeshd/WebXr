@@ -1,72 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Human Anatomy</title>
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Hello WebXR!</title>
+
+  <!-- three.js -->
+  <script src="https://unpkg.com/three@0.126.0/build/three.js"></script>
+  <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
 </head>
-
 <body>
-  <div class="mainContainer">
-    <!-- Top Container -->
-    <div class="topBar">
-      <h1>AR ANATOMY</h1>
-    </div>
-    <!-- NAV BAR Container -->
-    <div class="navbar">
-      <nav>
-        <ul class="nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#scan">Scan</a></li>
-          <li><a href="/webxr.github.io/ARtest/artest.html">AR_TEST</a></li>
-        </ul>
-      </nav>
-    </div>
-    <!-- Getting Started -->
-    <div class="gS">
-      <h4>AR: Anatomy Reimagined</h4>
-      <br>
-      <p>
-        Unlock the door to a whole new dimension of human anatomy education with our cutting-edge Augmented Reality (AR)
-        web application. 
-        <br>
-        <br>
-        Immerse yourself in the intricate world of the human body like never before, as we
-        revolutionize the way you learn and understand anatomy.
-        <br><br>
-        AR technology brings textbooks to life and bridges the gap between traditional learning methods and modern
-        innovation. By overlaying digital information onto the real world, AR enables an interactive and immersive
-        learning experience, making complex concepts tangible and easily comprehensible.
-        <br><br>
-      </p>
-      <h4>Explore Anatomy in 3D</h4>
-      <br>
-      <p>
-        Say goodbye to static images and hello to dynamic 3D models! With our AR app, you can explore every system,
-        organ, and structure of the human body in stunning detail. Rotate, zoom and gaining a
-        deeper understanding of anatomy from different angle.
-      </p>
-      <br>
-      <h4>Get Started </h4>
-      <br>
-      <p>
-        Ready to embark on your augmented reality anatomy adventure? Click the button below to move to explore the anatomy library.
-      </p>
-      <br>
-      <br>
-      <a href="/webxr.github.io/pages/home.html"><button class="start">GET STARTED</button></a>
-    </div>
-  </div>
-  <!-- Footer -->
-  <div class="footer">
-    <footer>
-      <p>AR Human Anatomy &copy; 2024</p>
-    </footer>
-  </div>
 
-  <script src="./js/type.js"></script>
+<!-- Starting an immersive WebXR session requires user interaction.
+    We start this one with a simple button. -->
+<button onclick="activateXR()">Start Hello WebXR</button>
+<script>
+async function activateXR() {
+  // Add a canvas element and initialize a WebGL context that is compatible with WebXR.
+  const canvas = document.createElement("canvas");
+  document.body.appendChild(canvas);
+  const gl = canvas.getContext("webgl", {xrCompatible: true});
+
+  // To be continued in upcoming steps.
+  const scene = new THREE.Scene();
+
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 0.3);
+  directionalLight.position.set(10, 15, 10);
+  scene.add(directionalLight);
+
+
+
+
+
+// Set up the WebGLRenderer, which handles rendering to the session's base layer.
+const renderer = new THREE.WebGLRenderer({
+  alpha: true,
+  preserveDrawingBuffer: true,
+  canvas: canvas,
+  context: gl
+});
+renderer.autoClear = false;
+
+// The API directly updates the camera matrices.
+// Disable matrix auto updates so three.js doesn't attempt
+// to handle the matrices independently.
+const camera = new THREE.PerspectiveCamera();
+camera.matrixAutoUpdate = false;
+
+// Initialize a WebXR session using "immersive-ar".
+const session = await navigator.xr.requestSession("immersive-ar");
+session.updateRenderState({
+  baseLayer: new XRWebGLLayer(session, gl)
+});
+
+// A 'local' reference space has a native origin that is located
+// near the viewer's position at the time the session was created.
+const referenceSpace = await session.requestReferenceSpace('local');
+
+const loader = new THREE.GLTFLoader();
+let reticle;
+loader.load("https://immersive-web.github.io/webxr-samples/media/gltf/reticle/reticle.gltf", function(gltf) {
+  reticle = gltf.scene;
+  reticle.visible = false;
+  scene.add(reticle);
+})
+
+
+
+
+// Create a render loop that allows us to draw on the AR view.
+const onXRFrame = (time, frame) => {
+  // Queue up the next draw request.
+  session.requestAnimationFrame(onXRFrame);
+
+  // Bind the graphics framebuffer to the baseLayer's framebuffer
+  gl.bindFramebuffer(gl.FRAMEBUFFER, session.renderState.baseLayer.framebuffer)
+
+  // Retrieve the pose of the device.
+  // XRFrame.getViewerPose can return null while the session attempts to establish tracking.
+  const pose = frame.getViewerPose(referenceSpace);
+  if (pose) {
+    // In mobile AR, we only have one view.
+    const view = pose.views[0];
+
+    const viewport = session.renderState.baseLayer.getViewport(view);
+    renderer.setSize(viewport.width, viewport.height)
+
+    // Use the view's transform matrix and projection matrix to configure the THREE.camera.
+    camera.matrix.fromArray(view.transform.matrix)
+    camera.projectionMatrix.fromArray(view.projectionMatrix);
+    camera.updateMatrixWorld(true);
+
+    // Render the scene with THREE.WebGLRenderer.
+    renderer.render(scene, camera)
+  }
+}
+session.requestAnimationFrame(onXRFrame);
+
+}
+</script>
 </body>
-
 </html>
